@@ -5,9 +5,12 @@ using UnityEngine;
 public class PL_Movement : MonoBehaviour
 {
     private float forwardSpeed = 10;
-    private float upwardForce = 1300;
+    private float upwardForce = 2000;
     private float backForce = 5;
+    private float climbSpeed = 10;
+
     private bool isGrounded = false;
+    private bool isAgainstWall = false;
 
     private Rigidbody rb;
 
@@ -24,7 +27,7 @@ public class PL_Movement : MonoBehaviour
     {
         if(layout == keyboardLayout.AZERTY)
         {
-            if (Input.GetKey(KeyCode.Z))
+            if (Input.GetKey(KeyCode.Z) && !isAgainstWall)
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * forwardSpeed);
             }
@@ -40,10 +43,14 @@ public class PL_Movement : MonoBehaviour
             {
                 transform.Translate(Vector3.right * Time.deltaTime * forwardSpeed);
             }
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isAgainstWall)
             {
                 rb.AddForce(Vector3.up * Time.deltaTime * upwardForce, ForceMode.Impulse);
                 isGrounded = false;
+            }
+            if(Input.GetKey(KeyCode.Space) && isAgainstWall)
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * climbSpeed);
             }
         }
         else if(layout == keyboardLayout.QWERTY)
@@ -74,9 +81,13 @@ public class PL_Movement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Jumpable")
+        if (collision.gameObject.tag == "Jumpable")
         {
             isGrounded = true;
+        }
+        else if (collision.gameObject.tag == "ClimbAble")
+        {
+            isAgainstWall = true;
         }
     }
 
@@ -85,6 +96,10 @@ public class PL_Movement : MonoBehaviour
         if(collision.gameObject.tag == "Jumpable")
         {
             isGrounded = false;
+        }
+        else if(collision.gameObject.tag == "ClimbAble")
+        {
+            isAgainstWall = false;
         }
     }
 }

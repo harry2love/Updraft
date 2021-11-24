@@ -12,6 +12,7 @@ public class CloudAbility : MonoBehaviour
     private float reload = 2;
 
     private bool reloadActive = false;
+
     // Start is called before the first frame update
     void Start()
     {

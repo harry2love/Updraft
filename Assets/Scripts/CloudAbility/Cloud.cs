@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cloud : MonoBehaviour
 {
-    private float destroyTime = 3;
+    private float destroyTime = 10;
     private float collisionDestroyTime = 0.5f;
     // Start is called before the first frame update
     void Start()
