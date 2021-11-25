@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CA_Shoot : MonoBehaviour
 {
-    private float weaponRange = 500;
-    private Camera camera;
-    private float fireRate = 2;
+    private Camera cam;
 
-    // Start is called before the first frame update
+    private float range = 50;
+
+    private int damage = 10;
     void Start()
     {
-        camera = GetComponent<Camera>();
+        cam = GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -19,14 +19,14 @@ public class CA_Shoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Vector3 rayOrigin = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.5f));
+            Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1.2f));
             RaycastHit hit;
 
-            if(Physics.Raycast(rayOrigin, camera.transform.forward, out hit, weaponRange))
+            if (Physics.Raycast(rayOrigin, cam.transform.forward, out hit, range))
             {
-                if(hit.transform.name == "Cloud(Clone)")
+                if (hit.collider.GetComponent<Button_Hit>() != null && gameObject.name != "Player")
                 {
-                    Destroy(hit.transform.gameObject);
+                    hit.collider.GetComponent<Button_Hit>().Activate();
                 }
             }
         }
