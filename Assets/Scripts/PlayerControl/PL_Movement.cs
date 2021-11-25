@@ -5,7 +5,7 @@ using UnityEngine;
 public class PL_Movement : MonoBehaviour
 {
     private float forwardSpeed = 10;
-    private float upwardForce = 3500;
+    private float upwardForce = 2000;
     private float backForce = 5;
     private float climbSpeed = 10;
 
@@ -77,6 +77,7 @@ public class PL_Movement : MonoBehaviour
                 isGrounded = false;
             }
         }
+
     }
 
     private void OnCollisionEnter(Collision collision)
