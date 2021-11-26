@@ -17,14 +17,23 @@ public class BHit_Side : MonoBehaviour
     }
     public void Activate()
     {
-        GameObject.Find("PlatForm").GetComponent<Plat_Side>().GoSideWays(10, 9);
         StartCoroutine(PressEffect());
+
+        if (GameObject.Find("PlatForm").transform.position.z > 10)
+        {
+            GameObject.Find("PlatForm").GetComponent<Plat_Side>().GoSideWays(10, -25);
+        }
+
+        else if (GameObject.Find("PlatForm").transform.position.z < 10)
+        {
+            GameObject.Find("PlatForm").GetComponent<Plat_Side>().GoSideWays(-10, 12);
+        }
     }
 
     IEnumerator PressEffect()
     {
-        transform.position -= new Vector3(0, transform.position.y - 1, 0);
+        transform.position -= new Vector3(0, transform.position.y - 0.5f, 0);
         yield return new WaitForSeconds(2);
-        transform.position += new Vector3(0, transform.position.y + 1, 0);
+        transform.position += new Vector3(0, transform.position.y + 0.5f, 0);
     }
 }

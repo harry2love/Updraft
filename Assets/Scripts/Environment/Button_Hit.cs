@@ -17,7 +17,7 @@ public class Button_Hit : MonoBehaviour
     }
 
     public void Activate()
-    {
+    { 
         GameObject.Find("Wall").GetComponent<Plat_Up>().GoUp(10, 5);
         StartCoroutine(PressEffect());
     }
