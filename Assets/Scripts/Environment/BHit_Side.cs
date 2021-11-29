@@ -19,14 +19,14 @@ public class BHit_Side : MonoBehaviour
     {
         StartCoroutine(PressEffect());
 
-        if (GameObject.Find("PlatForm").transform.position.z > 10)
+        if (GameObject.Find("PlatForm").transform.position.x > 3)
         {
-            GameObject.Find("PlatForm").GetComponent<Plat_Side>().GoSideWays(10, -25);
+            GameObject.Find("PlatForm").GetComponent<Plat_Side>().GoSideWays(10, -6);
         }
 
-        else if (GameObject.Find("PlatForm").transform.position.z < 10)
+        else if (GameObject.Find("PlatForm").transform.position.x < 4)
         {
-            GameObject.Find("PlatForm").GetComponent<Plat_Side>().GoSideWays(-10, 12);
+            GameObject.Find("PlatForm").GetComponent<Plat_Side>().GoSideWays(-10, 4);
         }
     }
 

@@ -15,9 +15,9 @@ public class Plat_Side : MonoBehaviour
 
     void Update()
     {
-        if (start && transform.position.z > limit)
+        if (start && transform.position.x > limit)
         {
-            transform.Translate(Vector3.back * Time.deltaTime * speed);
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
         }
     }
 

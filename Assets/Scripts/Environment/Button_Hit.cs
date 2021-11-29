@@ -24,8 +24,8 @@ public class Button_Hit : MonoBehaviour
 
     IEnumerator PressEffect()
     {
-        transform.position -= new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-        yield return new WaitForSeconds(2);
-        transform.position += new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        transform.position -= new Vector3(0, transform.position.y - 0.5f, 0);
+        yield return new WaitForSeconds(0.75f);
+        transform.position += new Vector3(0, transform.position.y + 0.5f , 0);
     }
 }

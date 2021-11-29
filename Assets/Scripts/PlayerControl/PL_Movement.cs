@@ -8,9 +8,11 @@ public class PL_Movement : MonoBehaviour
     private float upwardForce = 2000;
     private float backForce = 5;
     private float climbSpeed = 10;
+    private float dashSpeed = 10000;
 
     private bool isGrounded = false;
     private bool isAgainstWall = false;
+    private bool dashActive = false;
 
     private Rigidbody rb;
 
@@ -52,6 +54,10 @@ public class PL_Movement : MonoBehaviour
             {
                 transform.Translate(Vector3.up * Time.deltaTime * climbSpeed);
             }
+            if (Input.GetKey(KeyCode.A))
+            {
+                StartCoroutine(Dash());
+            }
         }
         else if(layout == keyboardLayout.QWERTY)
         {
@@ -73,13 +79,26 @@ public class PL_Movement : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
+                
                 rb.AddForce(Vector3.up * Time.deltaTime * upwardForce, ForceMode.Impulse);
                 isGrounded = false;
             }
         }
 
+        if (dashActive)
+        {
+            rb.AddRelativeForce(Vector3.forward * Time.deltaTime * dashSpeed);
+        }
+
     }
 
+    IEnumerator Dash()
+    {
+        dashActive = true;
+        yield return new WaitForSeconds(0.5f);
+        dashActive = false;
+        rb.velocity = new Vector3(0, 0, 0);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Jumpable")
