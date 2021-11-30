@@ -6,8 +6,8 @@ public class CA_LookAround : MonoBehaviour
 {
     private Transform player;
     private Vector2 rotation;
-    private float sensitivity = 5;
-    private float offset = 1;
+    private float sensitivity = 1;
+    private float offset = 0.45f;
     // Start is called before the first frame update
     void Start()
     {
