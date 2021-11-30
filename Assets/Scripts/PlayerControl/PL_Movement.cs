@@ -7,7 +7,6 @@ public class PL_Movement : MonoBehaviour
     private float forwardSpeed = 10;
     private float upwardForce = 2000;
     private float backForce = 5;
-    private float climbSpeed = 10;
     private float dashSpeed = 10000;
 
     private bool isGrounded = false;
@@ -49,10 +48,6 @@ public class PL_Movement : MonoBehaviour
             {
                 rb.AddForce(Vector3.up * Time.deltaTime * upwardForce, ForceMode.Impulse);
                 isGrounded = false;
-            }
-            if(Input.GetKey(KeyCode.Space) && isAgainstWall)
-            {
-                transform.Translate(Vector3.up * Time.deltaTime * climbSpeed);
             }
             if (Input.GetKey(KeyCode.A))
             {
