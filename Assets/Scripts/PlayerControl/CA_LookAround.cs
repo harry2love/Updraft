@@ -23,5 +23,7 @@ public class CA_LookAround : MonoBehaviour
         transform.position = player.position + new Vector3(0, offset, 0);
         transform.eulerAngles = rotation * sensitivity;
         player.eulerAngles = new Vector2(player.rotation.x, rotation.y) * sensitivity;
+
+        
     }
 }

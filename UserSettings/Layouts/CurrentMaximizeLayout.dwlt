@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 11305
+  controlID: 1522
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 11306
+  controlID: 1523
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 11307
+  controlID: 1524
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 366
     height: 561
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -502,9 +502,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.5201254, y: 4.7719097, z: -48.230686}
+    m_Target: {x: -13.990627, y: 1.556438, z: -23.307028}
     speed: 2
-    m_Value: {x: 7.5201254, y: 4.7719097, z: -48.230686}
+    m_Value: {x: -13.990627, y: 1.556438, z: -23.307028}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -551,13 +551,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.4472702, y: -0.018246572, z: 0.009126596, w: -0.89417726}
+    m_Target: {x: -0.06863004, y: -0.7714046, z: 0.084686585, w: -0.6269944}
     speed: 2
-    m_Value: {x: -0.4472658, y: -0.018246392, z: 0.009126506, w: -0.89416844}
+    m_Value: {x: -0.06862768, y: -0.77137804, z: 0.084683664, w: -0.6269728}
   m_Size:
-    m_Target: 41.27508
+    m_Target: 17.303812
     speed: 2
-    m_Value: 41.27508
+    m_Value: 17.303812
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -601,8 +601,8 @@ MonoBehaviour:
     y: 561
     width: 1470
     height: 386
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -650,22 +650,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Environment
+    - Assets/Scripts/PlayerControl
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Environment
+  - Assets/Scripts/PlayerControl
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\singhh\Updraft
+  m_LastProjectPath: E:\Github\winrar-x64-600.exe\Updraft
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b04b0000
-    m_LastClickedID: 19376
-    m_ExpandedIDs: 000000008a4b0000984b000000ca9a3bffffff7f
+    m_SelectedIDs: 484b0000
+    m_LastClickedID: 19272
+    m_ExpandedIDs: 00000000364b0000444b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -693,7 +693,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008a4b000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000364b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -718,8 +718,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b44a0000
-    m_LastClickedInstanceID: 19124
+    m_SelectedInstanceIDs: f24a0000
+    m_LastClickedInstanceID: 19186
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -796,8 +796,8 @@ MonoBehaviour:
     y: 0
     width: 450
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -837,7 +837,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 19124
+  m_LastInspectedObjectInstanceID: 19186
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
