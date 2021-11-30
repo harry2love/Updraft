@@ -6,8 +6,8 @@ public class CA_LookAround : MonoBehaviour
 {
     private Transform player;
     private Vector2 rotation;
-    private float sensitivity = 5;
-    private float offset = 1;
+    private float sensitivity = 1;
+    private float offset = 0.45f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +23,7 @@ public class CA_LookAround : MonoBehaviour
         transform.position = player.position + new Vector3(0, offset, 0);
         transform.eulerAngles = rotation * sensitivity;
         player.eulerAngles = new Vector2(player.rotation.x, rotation.y) * sensitivity;
+
+        
     }
 }
