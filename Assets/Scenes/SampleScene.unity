@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 410986189}
   - component: {fileID: 410986188}
   - component: {fileID: 410986187}
-  - component: {fileID: 410986186}
+  - component: {fileID: 410986191}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -337,18 +337,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &410986186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410986185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 932c5d18067e0844b891e09ce6facec5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &410986187
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -382,7 +370,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2eb53fbb259614e489f45beebb9e0d41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -427,6 +415,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &410986191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410986185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b2ff15631db354ea31a5ea4c00d02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  twoWay: 1
+  objectName: PlatForm
+  speed: 10
+  distance: 6
+  direction: 0
 --- !u!1 &644067384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,9 +1493,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1610463838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0957f3d2863aac64cabcec8d97b847a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f83623a671fc1f4c82ec8b7be62d6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: 0
 --- !u!1 &1708720284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1509,6 @@ GameObject:
   - component: {fileID: 1708720288}
   - component: {fileID: 1708720287}
   - component: {fileID: 1708720286}
-  - component: {fileID: 1708720285}
   - component: {fileID: 1708720290}
   - component: {fileID: 1708720291}
   m_Layer: 0
@@ -1513,18 +1518,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1708720285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708720284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e227f86f8a4351442a5d8abb4e8ad6ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &1708720286
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1629,7 +1622,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708720284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa9df352f8b62d43b4c3c2325592c56, type: 3}
+  m_Script: {fileID: 11500000, guid: e227f86f8a4351442a5d8abb4e8ad6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1844551660

@@ -28,11 +28,6 @@ public class CA_Shoot : MonoBehaviour
                 {
                     hit.collider.GetComponent<Button_Hit>().Activate();
                 }
-
-                else if(hit.collider.GetComponent<BHit_Side>() != null && gameObject.name != "Player")
-                {
-                    hit.collider.GetComponent<BHit_Side>().Activate();
-                }
             }
         }
     }
