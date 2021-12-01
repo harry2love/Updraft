@@ -10,7 +10,6 @@ public class PL_Movement : MonoBehaviour
     private float dashSpeed = 10000;
 
     private bool isGrounded = false;
-    private bool isAgainstWall = false;
     private bool dashActive = false;
 
     private Rigidbody rb;
@@ -28,7 +27,7 @@ public class PL_Movement : MonoBehaviour
     {
         if(layout == keyboardLayout.AZERTY)
         {
-            if (Input.GetKey(KeyCode.Z) && !isAgainstWall)
+            if (Input.GetKey(KeyCode.Z))
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * forwardSpeed);
             }
@@ -44,7 +43,7 @@ public class PL_Movement : MonoBehaviour
             {
                 transform.Translate(Vector3.right * Time.deltaTime * forwardSpeed);
             }
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isAgainstWall)
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 rb.AddForce(Vector3.up * Time.deltaTime * upwardForce, ForceMode.Impulse);
                 isGrounded = false;
@@ -100,10 +99,6 @@ public class PL_Movement : MonoBehaviour
         {
             isGrounded = true;
         }
-        else if (collision.gameObject.tag == "ClimbAble")
-        {
-            isAgainstWall = true;
-        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -111,10 +106,6 @@ public class PL_Movement : MonoBehaviour
         if(collision.gameObject.tag == "Jumpable")
         {
             isGrounded = false;
-        }
-        else if(collision.gameObject.tag == "ClimbAble")
-        {
-            isAgainstWall = false;
         }
     }
 }
