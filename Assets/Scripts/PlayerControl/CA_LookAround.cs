@@ -5,9 +5,9 @@ using UnityEngine;
 public class CA_LookAround : MonoBehaviour
 {
     private Transform player;
-    private Vector2 rotation;
-    private float sensitivity = 1;
-    private float offset = 0.45f;
+    public Vector2 rotation;
+    [SerializeField]private float sensitivity;
+    [SerializeField]private float offset;
 
     // Start is called before the first frame update
     void Start()
@@ -18,24 +18,27 @@ public class CA_LookAround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-            rotation.x -= Input.GetAxis("Mouse Y");
-        rotation.y = rotation.y + Input.GetAxis("Mouse X");
         
-
+        rotation.x -= Input.GetAxis("Mouse Y");
+        rotation.y = rotation.y + Input.GetAxis("Mouse X");
         transform.position = player.position + new Vector3(0, offset, 0);
+
+        
         transform.eulerAngles = rotation * sensitivity;
         player.eulerAngles = new Vector2(player.rotation.x, rotation.y) * sensitivity;
 
-        /*if (localAngle.x > 180 && localAngle.x > -180)
+        if(rotation.x < 90 && rotation.x > -90)
         {
-            Debug.Log("Quoi?");
-            transform.localRotation = new Quaternion(180, localAngle.y, localAngle.z, transform.localRotation.w);
+
         }
-        else if(localAngle.x < -90 && localAngle.x < 90)
+        else if(rotation.x > 90)
         {
-            transform.localRotation = new Quaternion(-90, localAngle.y, localAngle.z, transform.localRotation.w);
-        }*/ //werkt niet
+            rotation.x = 90;
+        }
+        else if(rotation.x < -90)
+        {
+            rotation.x = -90;
+        }
 
     }
 }

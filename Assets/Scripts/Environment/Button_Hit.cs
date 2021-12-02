@@ -9,6 +9,10 @@ public class Button_Hit : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float distance;
     [SerializeField] private Plat_Move.Direction direction;
+    [SerializeField] private float pressTime;
+    [SerializeField] private float pressDistance;
+
+    private bool isPressed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,15 +27,27 @@ public class Button_Hit : MonoBehaviour
 
     public void Activate()
     {
-        GameObject.Find("PlatForm").GetComponent<Plat_Move>().Move(speed, distance, direction);
-        StartCoroutine(PressEffect());
+        switch (isPressed)
+        {
+            case false:
+                GameObject.Find(objectName).GetComponent<Plat_Move>().Move(speed, distance, direction);
+                StartCoroutine(PressEffect());
+                break;
+            case true:
+                break;
+        }
+        
     }
 
     IEnumerator PressEffect()
     {
-        transform.position -= new Vector3(0, transform.position.y - 0.5f, 0);
-        yield return new WaitForSeconds(0.75f);
-        transform.position += new Vector3(0, transform.position.y + 0.5f , 0);
+        isPressed = true;
+
+        transform.Translate(new Vector3(0, 0, pressDistance));
+        yield return new WaitForSeconds(pressTime);
+        transform.Translate(new Vector3(0, 0, -pressDistance));
+
+        isPressed = false;
 
         if (twoWay)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PL_Movement : MonoBehaviour
 {
     private float forwardSpeed = 10;
-    private float upwardForce = 2000;
+    private float upwardForce = 2000000;
     private float backForce = 5;
     private float dashSpeed = 10000;
 
