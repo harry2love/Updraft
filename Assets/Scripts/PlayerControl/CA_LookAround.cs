@@ -27,17 +27,17 @@ public class CA_LookAround : MonoBehaviour
         transform.eulerAngles = rotation * sensitivity;
         player.eulerAngles = new Vector2(player.rotation.x, rotation.y) * sensitivity;
 
-        if(rotation.x < 90 && rotation.x > -90)
+        if(rotation.x < 180 && rotation.x > -180)
         {
 
         }
-        else if(rotation.x > 90)
+        else if(rotation.x > 180)
         {
-            rotation.x = 90;
+            rotation.x = 180;
         }
-        else if(rotation.x < -90)
+        else if(rotation.x < -180)
         {
-            rotation.x = -90;
+            rotation.x = -180;
         }
 
     }

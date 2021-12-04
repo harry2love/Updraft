@@ -36,7 +36,7 @@ public class PL_Movement : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Z))
                 {
-                    direction1 = transform.TransformDirection(Vector3.forward * Time.deltaTime * speed * 1000);
+                    direction1 = transform.TransformDirection(Vector3.forward * Time.deltaTime * speed * 100);
                 }
                 else if (!Input.GetKey(KeyCode.Z))
                 {
@@ -45,7 +45,7 @@ public class PL_Movement : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.S))
                 {
-                    direction2 = transform.TransformDirection(Vector3.back * Time.deltaTime * backSpeed * 1000);
+                    direction2 = transform.TransformDirection(Vector3.back * Time.deltaTime * backSpeed * 100);
                 }
                 else if (!Input.GetKey(KeyCode.S))
                 {
@@ -54,7 +54,7 @@ public class PL_Movement : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Q))
                 {
-                    direction3 = transform.TransformDirection(Vector3.left * Time.deltaTime * speed * 1000);
+                    direction3 = transform.TransformDirection(Vector3.left * Time.deltaTime * speed * 100);
                 }
                 else if (!Input.GetKey(KeyCode.Q))
                 {
@@ -63,7 +63,7 @@ public class PL_Movement : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.D))
                 {
-                    direction4 = transform.TransformDirection(Vector3.right * Time.deltaTime * speed * 1000);
+                    direction4 = transform.TransformDirection(Vector3.right * Time.deltaTime * speed * 100);
                 }
                 else if (!Input.GetKey(KeyCode.D))
                 {
@@ -76,7 +76,16 @@ public class PL_Movement : MonoBehaviour
                     isGrounded = false;
                 }
                 Vector3 fulldirection = direction1 + direction2 + direction3 + direction4;
-                rb.velocity = new Vector3(fulldirection.x, rb.velocity.y, fulldirection.z);
+                rb.AddForce(new Vector3(fulldirection.x, rb.velocity.y, fulldirection.z));
+
+                if(rb.velocity.x > 50)
+                {
+                    rb.velocity = new Vector3(90, rb.velocity.y, rb.velocity.z);
+                }
+                else if(rb.velocity.z > 50)
+                {
+                    rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 90);
+                }
 
                 break;
 
