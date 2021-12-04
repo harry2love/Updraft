@@ -350,10 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e227f86f8a4351442a5d8abb4e8ad6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction1: {x: 0, y: 0, z: 0}
-  direction2: {x: 0, y: 0, z: 0}
-  direction3: {x: 0, y: 0, z: 0}
-  direction4: {x: 0, y: 0, z: 0}
   layout: 0
 --- !u!136 &173581506
 CapsuleCollider:
@@ -449,7 +445,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &284221575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,10 +1288,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   twoWay: 1
-  objectName: Roof
+  objectName: sel
   speed: 10
   distance: 10
-  direction: 4
+  direction: 2
   pressTime: 1
   pressDistance: 0.5
 --- !u!65 &870142259
@@ -1572,7 +1568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: 0}
-  sensitivity: 1
+  sensitivity: 0.5
   offset: 0.45
 --- !u!114 &963194230
 MonoBehaviour:
@@ -2594,8 +2590,9 @@ GameObject:
   - component: {fileID: 1497582011}
   - component: {fileID: 1497582010}
   - component: {fileID: 1497582009}
+  - component: {fileID: 1497582012}
   m_Layer: 0
-  m_Name: Pillar (4)
+  m_Name: sel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2679,6 +2676,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497582007}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1497582012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497582007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f83623a671fc1f4c82ec8b7be62d6f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 6
 --- !u!1 &1561506595
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class CA_LookAround : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         
         rotation.x -= Input.GetAxis("Mouse Y");

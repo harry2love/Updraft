@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PL_Movement : MonoBehaviour
 {
-    private float forwardSpeed = 10000;
-    private float upwardForce = 2000;
-    private float backForce = 10000;
-    private float dashSpeed = 10000;
+    private float speed = 10;
+    private float upwardForce = 2;
+    private float backSpeed = 10;
+    private float dashSpeed = 10;
 
     private bool isGrounded = false;
     private bool dashActive = false;
 
-    public Vector3 direction1;
-    public Vector3 direction2;
-    public Vector3 direction3;
-    public Vector3 direction4;
+    private Vector3 direction1;
+    private Vector3 direction2;
+    private Vector3 direction3;
+    private Vector3 direction4;
 
     private Rigidbody rb;
 
@@ -28,7 +28,7 @@ public class PL_Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         switch (layout)
         {
@@ -36,7 +36,7 @@ public class PL_Movement : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Z))
                 {
-                    direction1 = transform.TransformDirection(Vector3.forward * Time.deltaTime * forwardSpeed);
+                    direction1 = transform.TransformDirection(Vector3.forward * Time.deltaTime * speed * 1000);
                 }
                 else if (!Input.GetKey(KeyCode.Z))
                 {
@@ -45,7 +45,7 @@ public class PL_Movement : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.S))
                 {
-                    direction2 = transform.TransformDirection(Vector3.back * Time.deltaTime * backForce);
+                    direction2 = transform.TransformDirection(Vector3.back * Time.deltaTime * backSpeed * 1000);
                 }
                 else if (!Input.GetKey(KeyCode.S))
                 {
@@ -54,7 +54,7 @@ public class PL_Movement : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Q))
                 {
-                    direction3 = transform.TransformDirection(Vector3.left * Time.deltaTime * forwardSpeed);
+                    direction3 = transform.TransformDirection(Vector3.left * Time.deltaTime * speed * 1000);
                 }
                 else if (!Input.GetKey(KeyCode.Q))
                 {
@@ -63,7 +63,7 @@ public class PL_Movement : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.D))
                 {
-                    direction4 = transform.TransformDirection(Vector3.right * Time.deltaTime * forwardSpeed);
+                    direction4 = transform.TransformDirection(Vector3.right * Time.deltaTime * speed * 1000);
                 }
                 else if (!Input.GetKey(KeyCode.D))
                 {
@@ -72,7 +72,7 @@ public class PL_Movement : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
                 {
-                    rb.AddForce(Vector3.up * Time.deltaTime * upwardForce, ForceMode.Impulse);
+                    rb.AddForce(Vector3.up * Time.deltaTime * upwardForce * 1000, ForceMode.Impulse);
                     isGrounded = false;
                 }
                 Vector3 fulldirection = direction1 + direction2 + direction3 + direction4;
@@ -86,19 +86,19 @@ public class PL_Movement : MonoBehaviour
                 {
                     if (Input.GetKey(KeyCode.W))
                     {
-                        transform.Translate(Vector3.forward * Time.deltaTime * forwardSpeed);
+                        transform.Translate(Vector3.forward * Time.deltaTime * speed);
                     }
                     if (Input.GetKey(KeyCode.A))
                     {
-                        transform.Translate(Vector3.back * Time.deltaTime * backForce);
+                        transform.Translate(Vector3.back * Time.deltaTime * backSpeed);
                     }
                     if (Input.GetKey(KeyCode.S))
                     {
-                        transform.Translate(Vector3.left * Time.deltaTime * forwardSpeed);
+                        transform.Translate(Vector3.left * Time.deltaTime * speed);
                     }
                     if (Input.GetKey(KeyCode.D))
                     {
-                        transform.Translate(Vector3.right * Time.deltaTime * forwardSpeed);
+                        transform.Translate(Vector3.right * Time.deltaTime * speed);
                     }
                     if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
                     {
